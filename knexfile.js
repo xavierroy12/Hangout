@@ -6,9 +6,19 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: 'mysql',
     connection: {
-      filename: './dev.sqlite3'
+      host: 'localhost', // Laragon MySQL server is usually hosted locally
+      database: 'hangout', // replace with your database name
+      user: 'root', // by default, Laragon MySQL user is 'root'
+      password: '' // by default, Laragon MySQL password is empty
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
     }
   },
 
