@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors'); // add this line
 
 const app = express();
-app.use(cors()); // add this line
+app.use(cors()); // add this line to use cors
 
 const environment = process.env.NODE_ENV || 'development'; // set environment
 const config = require('./knexfile')[environment]; // import knexfile config related to environment
